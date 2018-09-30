@@ -325,7 +325,11 @@ static UniValue getblocktemplate(const JSONRPCRequest& request)
             "      ,...\n"
             "  },\n"
             "  \"vbrequired\" : n,                 (numeric) bit mask of versionbits the server requires set in submissions\n"
+            "  \"algo\" : n,                       (numeric) A number representing the algorithm this template is to be hashed with\n"
             "  \"previousblockhash\" : \"xxxx\",     (string) The hash of current highest block\n"
+            "  \"auxchainhash\" : \"xxxx\",          (string) The hash of current auxChain block\n"
+            "  \"auxblockstate\" : \"xxxx\",         (string) The hash representing the auxChain state\n"
+            "  \"auxblockdata\" : \"xxxx\",          (string) The hash representing additional auxChain misc data\n"
             "  \"transactions\" : [                (array) contents of non-coinbase transactions that should be included in the next block\n"
             "      {\n"
             "         \"data\" : \"xxxx\",             (string) transaction data encoded in hexadecimal (byte-for-byte)\n"
@@ -649,7 +653,11 @@ static UniValue getblocktemplate(const JSONRPCRequest& request)
         aMutable.push_back("version/force");
     }
 
+    result.push_back(Pair("algo", 0));
     result.pushKV("previousblockhash", pblock->hashPrevBlock.GetHex());
+    result.push_back(Pair("auxchainhash", 0));
+    result.push_back(Pair("auxblockstate", 0));
+    result.push_back(Pair("auxblockdata", 0));
     result.pushKV("transactions", transactions);
     result.pushKV("coinbaseaux", aux);
     result.pushKV("coinbasevalue", (int64_t)pblock->vtx[0]->vout[0].nValue);

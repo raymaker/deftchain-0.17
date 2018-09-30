@@ -98,6 +98,10 @@ UniValue blockheaderToJSON(const CBlockIndex* blockindex)
     result.pushKV("time", (int64_t)blockindex->nTime);
     result.pushKV("mediantime", (int64_t)blockindex->GetMedianTimePast());
     result.pushKV("nonce", (uint64_t)blockindex->nNonce);
+    result.push_back(Pair("auxchainhash", 0));
+    result.push_back(Pair("auxblockstate", 0));
+    result.push_back(Pair("auxblockdata", 0));
+    result.push_back(Pair("algo", strprintf("%08x", blockindex->nAlgo)));
     result.pushKV("bits", strprintf("%08x", blockindex->nBits));
     result.pushKV("difficulty", GetDifficulty(blockindex));
     result.pushKV("chainwork", blockindex->nChainWork.GetHex());

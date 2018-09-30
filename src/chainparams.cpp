@@ -4,13 +4,12 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
+#include <arith_uint256.h>
 #include <chainparams.h>
 #include <consensus/merkle.h>
-
 #include <tinyformat.h>
 #include <util.h>
 #include <utilstrencodings.h>
-
 #include <assert.h>
 
 #include <chainparamsseeds.h>
@@ -26,6 +25,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
     txNew.vout[0].scriptPubKey = genesisOutputScript;
 
     CBlock genesis;
+    genesis.nAlgo    = nAlgo;
     genesis.nTime    = nTime;
     genesis.nBits    = nBits;
     genesis.nNonce   = nNonce;
@@ -96,7 +96,24 @@ public:
         nDefaultPort = 8333;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1231006505, 2083236893, 0x1d00ffff, 1, 50 * COIN);
+	// genesis vars
+	int nGenesisAlgo = 0;
+	uint32_t nNonce = 0;
+	uint32_t nGenesisTime = 0;
+	uint32_t nBits = 0x1f00ffff;
+	genesis = CreateGenesisBlock(nGenesisAlgo, nGenesisTime, nNonce, nBits, 1, 0 * COIN);
+
+        // genesis block routine
+        if (nNonce == 0) {
+	   while (UintToArith256(genesis.GetPoWHash()) > UintToArith256(consensus.powLimit)) {
+              nNonce++;
+              genesis = CreateGenesisBlock(nGenesisAlgo, nGenesisTime, nNonce, nBits, 1, 0 * COIN);
+              if (nNonce % 32) LogPrintf("nonce %08x\n", nNonce);
+           }
+           LogPrintf("nNonce was %d\ngenesis: %s\n", nNonce, genesis.ToString().c_str());
+        }
+
+        genesis = CreateGenesisBlock(nGenesisAlgo, nGenesisTime, nNonce, nBits, 1, 0 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0000000000000000000000000000000000000000000000000000000000000000"));
         assert(genesis.hashMerkleRoot == uint256S("0000000000000000000000000000000000000000000000000000000000000000"));
