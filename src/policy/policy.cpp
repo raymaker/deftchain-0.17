@@ -1,5 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2018 The Bitcoin Core developers
+// Copyright (c) 2018 The Deftchain developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -260,3 +261,4 @@ int64_t GetVirtualTransactionInputSize(const CTxIn& txin, int64_t nSigOpCost)
 {
     return GetVirtualTransactionSize(GetTransactionInputWeight(txin), nSigOpCost);
 }
+

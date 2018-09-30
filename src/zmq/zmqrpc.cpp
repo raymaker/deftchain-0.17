@@ -1,4 +1,5 @@
 // Copyright (c) 2018 The Bitcoin Core developers
+// Copyright (c) 2018 The Deftchain developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -59,3 +60,4 @@ void RegisterZMQRPCCommands(CRPCTable& t)
         t.appendCommand(c.name, &c);
     }
 }
+

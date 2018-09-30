@@ -1,4 +1,5 @@
 // Copyright (c) 2017-2018 The Bitcoin Core developers
+// Copyright (c) 2018 The Deftchain developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -284,3 +285,4 @@ bool TxIndex::FindTx(const uint256& tx_hash, uint256& block_hash, CTransactionRe
     block_hash = header.GetHash();
     return true;
 }
+

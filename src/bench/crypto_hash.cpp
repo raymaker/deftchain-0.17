@@ -1,4 +1,5 @@
 // Copyright (c) 2016-2018 The Bitcoin Core developers
+// Copyright (c) 2018 The Deftchain developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -105,3 +106,4 @@ BENCHMARK(SipHash_32b, 40 * 1000 * 1000);
 BENCHMARK(SHA256D64_1024, 7400);
 BENCHMARK(FastRandom_32bit, 110 * 1000 * 1000);
 BENCHMARK(FastRandom_1bit, 440 * 1000 * 1000);
+

@@ -1,10 +1,11 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2018 The Bitcoin Core developers
+// Copyright (c) 2018 The Deftchain developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_UTILMEMORY_H
-#define BITCOIN_UTILMEMORY_H
+#ifndef DEFTCHAIN_UTILMEMORY_H
+#define DEFTCHAIN_UTILMEMORY_H
 
 #include <memory>
 #include <utility>
@@ -17,3 +18,4 @@ std::unique_ptr<T> MakeUnique(Args&&... args)
 }
 
 #endif
+

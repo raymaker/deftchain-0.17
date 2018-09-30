@@ -1,11 +1,12 @@
 // Copyright (c) 2012-2018 The Bitcoin Core developers
+// Copyright (c) 2018 The Deftchain developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <random.h>
 #include <scheduler.h>
 
-#include <test/test_bitcoin.h>
+#include <test/test_deftchain.h>
 
 #include <boost/bind.hpp>
 #include <boost/thread.hpp>
@@ -155,3 +156,4 @@ BOOST_AUTO_TEST_CASE(singlethreadedscheduler_ordered)
 }
 
 BOOST_AUTO_TEST_SUITE_END()
+

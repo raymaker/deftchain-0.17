@@ -1,9 +1,10 @@
 // Copyright (c) 2018 The Bitcoin Core developers
+// Copyright (c) 2018 The Deftchain developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_SPAN_H
-#define BITCOIN_SPAN_H
+#ifndef DEFTCHAIN_SPAN_H
+#define DEFTCHAIN_SPAN_H
 
 #include <type_traits>
 #include <cstddef>
@@ -58,3 +59,4 @@ template<typename V>
 constexpr Span<typename std::remove_pointer<decltype(std::declval<V>().data())>::type> MakeSpan(V& v) { return Span<typename std::remove_pointer<decltype(std::declval<V>().data())>::type>(v.data(), v.size()); }
 
 #endif
+

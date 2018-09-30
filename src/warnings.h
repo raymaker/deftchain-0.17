@@ -1,10 +1,11 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2018 The Bitcoin Core developers
+// Copyright (c) 2018 The Deftchain developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_WARNINGS_H
-#define BITCOIN_WARNINGS_H
+#ifndef DEFTCHAIN_WARNINGS_H
+#define DEFTCHAIN_WARNINGS_H
 
 #include <stdlib.h>
 #include <string>
@@ -21,4 +22,5 @@ void SetfLargeWorkInvalidChainFound(bool flag);
  */
 std::string GetWarnings(const std::string& strFor);
 
-#endif //  BITCOIN_WARNINGS_H
+#endif //  DEFTCHAIN_WARNINGS_H
+

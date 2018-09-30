@@ -1,4 +1,5 @@
 // Copyright (c) 2015-2018 The Bitcoin Core developers
+// Copyright (c) 2018 The Deftchain developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -140,3 +141,4 @@ bool benchmark::State::UpdateTimer(const benchmark::time_point current_time)
     m_num_iters_left = m_num_iters - 1;
     return true;
 }
+

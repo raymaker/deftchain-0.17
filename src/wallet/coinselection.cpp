@@ -1,4 +1,5 @@
 // Copyright (c) 2017-2018 The Bitcoin Core developers
+// Copyright (c) 2018 The Deftchain developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -324,3 +325,4 @@ bool OutputGroup::EligibleForSpending(const CoinEligibilityFilter& eligibility_f
         && m_ancestors <= eligibility_filter.max_ancestors
         && m_descendants <= eligibility_filter.max_descendants;
 }
+

@@ -1,4 +1,5 @@
 // Copyright (c) 2018 The Bitcoin Core developers
+// Copyright (c) 2018 The Deftchain developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -30,7 +31,7 @@
 #include <warnings.h>
 
 #if defined(HAVE_CONFIG_H)
-#include <config/bitcoin-config.h>
+#include <config/deftchain-config.h>
 #endif
 #ifdef ENABLE_WALLET
 #include <wallet/fees.h>
@@ -290,3 +291,4 @@ class NodeImpl : public Node
 std::unique_ptr<Node> MakeNode() { return MakeUnique<NodeImpl>(); }
 
 } // namespace interfaces
+

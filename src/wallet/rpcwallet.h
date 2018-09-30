@@ -1,9 +1,10 @@
 // Copyright (c) 2016-2018 The Bitcoin Core developers
+// Copyright (c) 2018 The Deftchain developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_WALLET_RPCWALLET_H
-#define BITCOIN_WALLET_RPCWALLET_H
+#ifndef DEFTCHAIN_WALLET_RPCWALLET_H
+#define DEFTCHAIN_WALLET_RPCWALLET_H
 
 #include <string>
 
@@ -31,4 +32,5 @@ bool EnsureWalletIsAvailable(CWallet *, bool avoidException);
 UniValue getaddressinfo(const JSONRPCRequest& request);
 UniValue signrawtransactionwithwallet(const JSONRPCRequest& request);
 bool FillPSBT(const CWallet* pwallet, PartiallySignedTransaction& psbtx, const CTransaction* txConst, int sighash_type = 1, bool sign = true, bool bip32derivs = false);
-#endif //BITCOIN_WALLET_RPCWALLET_H
+#endif //DEFTCHAIN_WALLET_RPCWALLET_H
+
