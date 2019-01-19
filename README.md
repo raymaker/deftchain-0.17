@@ -10,7 +10,7 @@ block subsidy: 8.5 DEFT per block
 emission decay: block reward halves every 150,000 blocks
 emission simulation: included as 'deftreward.c'
 coin marketcap: maximum of 3 million DEFT
-coin swap: block 1 will contain 500,000 DEFT; which can be redeemed only by original users of the first deft release. coins present on the original chain, before height 30,000 will be accepted via crosschain transaction.
+coin swap: block 1 will contain X00,000 DEFT; which can be redeemed only by original users of the first deft release. coins present on the original chain, before height XX,000 will be accepted via crosschain transaction.
 what it is
 
 deftchain is an experimental digital currency, which allows users to roll out their own individual blockchain, by holding an unspent transaction of 2500 DEFT in their wallet, similar to a masternode collateral payment. the users blockchain will exist and function as long as the transaction is held; allowing the creation, storage or transmission of a users own currency.
